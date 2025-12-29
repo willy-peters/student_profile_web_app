@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Elibariki — Student Profile</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta
+      name="description"
+      content="Elibariki's student profile showcasing skills, projects and contact."
+    />
+  </head>
+  <body>
+    <main class="container">
+      <header class="profile-hero">
+        <div class="avatar" aria-hidden="true">
+          <!-- simple inline SVG avatar -->
+          <svg
+            viewBox="0 0 120 120"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+          >
+            <defs>
+              <linearGradient id="g" x1="0" x2="1">
+                <stop offset="0" stop-color="#6C63FF" />
+                <stop offset="1" stop-color="#00C6A7" />
+              </linearGradient>
+            </defs>
+            <rect width="120" height="120" rx="20" fill="#f3f4f6" />
+            <g transform="translate(20,20)">
+              <circle cx="40" cy="28" r="20" fill="url(#g)" />
+              <rect x="4" y="62" width="72" height="20" rx="8" fill="#e6e9ef" />
+            </g>
+          </svg>
+        </div>
+
+        <div class="hero-info">
+          <h1 class="name">Elibariki</h1>
+          <p class="role">Computer Science Student • Web Developer</p>
+          <p class="location">
+            Dar-es-salaam, Tanzania • ellybarikinkya@gmail.com
+          </p>
+
+          <p class="bio">
+            I build clean, accessible web experiences focused on clarity and
+            performance. Passionate about full-stack development, open-source,
+            and mentoring other students.
+          </p>
+
+          <div class="socials">
+            <a href="https://github.com/bluebird00002" aria-label="GitHub"
+              >GitHub</a
+            >
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-home" href="../index.html" aria-label="Homepage"
+              >← Homepage</a
+            >
+          </div>
+        </div>
+      </header>
+
+      <section class="grid">
+        <aside class="left-col">
+          <div class="card">
+            <h2>Skills</h2>
+            <ul class="skills">
+              <li>
+                <span>HTML/CSS</span
+                ><meter value="85" min="0" max="100">85%</meter>
+              </li>
+              <li>
+                <span>JavaScript</span
+                ><meter value="78" min="0" max="100">78%</meter>
+              </li>
+              <li>
+                <span>React</span
+                ><meter value="70" min="0" max="100">70%</meter>
+              </li>
+              <li>
+                <span>Node.js</span
+                ><meter value="65" min="0" max="100">65%</meter>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h2>Education</h2>
+            <p>
+              <strong>BSc Computer Science</strong><br />University of
+              Dar-es-salaam (2023 - Present)
+            </p>
+          </div>
+
+          <div class="card contact-card">
+            <h2>Contact</h2>
+            <p>
+              Email:
+              <a href="mailto:elibariki@example.com"
+                >ellybarikinkya@gmail.com</a
+              >
+            </p>
+            <p>Phone: +255 772662181</p>
+          </div>
+        </aside>
+
+        <section class="right-col">
+          <div class="card">
+            <h2>Projects</h2>
+            <ul class="projects">
+              <li>
+                <h3>Student Portal</h3>
+                <p>
+                  Web app to manage student profiles, attendance and coursework.
+                  Built with React and Firebase.
+                </p>
+              </li>
+              <li>
+                <h3>Portfolio Website</h3>
+                <p>
+                  Personal portfolio showcasing projects and blog posts. Focused
+                  on performance and accessibility.
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h2>Experience</h2>
+            <p>
+              <strong>Frontend Intern</strong> — Local Tech Company<br />Worked
+              on UI components, implemented responsive designs, and improved
+              site performance.
+            </p>
+          </div>
+
+          <div class="card">
+            <h2>Achievements</h2>
+            <ul>
+              <li>Hackathon finalist — 2024</li>
+              <li>Open-source contributor (small libraries & plugins)</li>
+            </ul>
+          </div>
+        </section>
+      </section>
+
+      <footer class="site-footer">
+        <p>
+          © <span id="year"></span> Software Engineering Group 9. All rights
+          reserved.
+        </p>
+      </footer>
+    </main>
+
+    <script>
+      // small script to set year
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
