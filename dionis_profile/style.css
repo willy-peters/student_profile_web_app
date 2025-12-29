@@ -1,0 +1,390 @@
+:root {
+    --primary-color: #6a11cb;
+    --secondary-color: #2575fc;
+    --accent-color: #ff4757;
+    --text-color: #ffffff;
+    --text-muted: #aaaaaa;
+    --glass-bg: rgba(0, 0, 0, 0.3);
+    /* Darker glass */
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: radial-gradient(circle at center, #0f172a 0%, #000000 100%);
+    /* Much darker */
+    color: var(--text-color);
+    height: 100vh;
+    /* Force full height */
+    width: 100%;
+    overflow: hidden;
+    /* Prevent body scroll, handle inside main if needed */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Background Shapes */
+.background-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.4;
+    animation: float 15s infinite ease-in-out;
+}
+
+.shape-1 {
+    width: 500px;
+    height: 500px;
+    background: #4c1d95;
+    /* Darker purple */
+    top: -150px;
+    left: -150px;
+}
+
+.shape-2 {
+    width: 400px;
+    height: 400px;
+    background: #1e3a8a;
+    /* Darker blue */
+    bottom: -100px;
+    right: -100px;
+    animation-delay: -5s;
+}
+
+.shape-3 {
+    width: 300px;
+    height: 300px;
+    background: #be123c;
+    /* Darker red */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Centered shape */
+    animation-delay: -8s;
+    opacity: 0.2;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(30px, -30px);
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Center vertically */
+    overflow-y: auto;
+    /* Scroll info only content overflows */
+    scrollbar-width: none;
+    /* Hide scrollbar Firefox */
+}
+
+/* Hide scrollbar Chrome/Safari */
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Back Button */
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    width: fit-content;
+    transition: all 0.3s ease;
+}
+
+.back-btn i {
+    margin-right: 8px;
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Glass Card */
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    border-radius: 24px;
+}
+
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 85vh;
+    /* Keep it within view */
+    overflow: hidden;
+    /* Internal scrolling if needed */
+    animation: zoomIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 768px) {
+    .profile-card {
+        flex-direction: row;
+        border-radius: 24px;
+    }
+}
+
+/* Profile Header (Left/Top) */
+.profile-header {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@media (min-width: 768px) {
+    .profile-header {
+        width: 35%;
+        /* Fixed width on desktop */
+        max-width: 350px;
+    }
+}
+
+.profile-img-container {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    padding: 4px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    margin-bottom: 20px;
+    box-shadow: 0 0 30px rgba(106, 17, 203, 0.4);
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #000;
+    background-color: #1a1a2e;
+}
+
+.profile-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.profile-role {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    margin-bottom: 25px;
+}
+
+.social-links {
+    display: flex;
+    gap: 12px;
+}
+
+.social-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-icon:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+/* Profile Body (Right/Bottom) */
+.profile-body {
+    padding: 30px;
+    flex: 1;
+    overflow-y: auto;
+    /* Scroll content if long */
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Custom Scrollbar for profile body */
+.profile-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.profile-body::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.profile-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.info-group h3 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--secondary-color);
+    margin-bottom: 8px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+}
+
+.info-group h3 i {
+    margin-right: 8px;
+    opacity: 0.8;
+}
+
+.info-group p {
+    font-size: 1rem;
+    color: #e0e0e0;
+    line-height: 1.5;
+}
+
+.bio-text {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 15px;
+    border-radius: 12px;
+    border-left: 3px solid var(--accent-color);
+    font-size: 0.95rem;
+}
+
+/* Skills */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-tag {
+    padding: 6px 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    font-size: 0.85rem;
+    color: #ddd;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Animation */
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.75rem;
+    width: 100%;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    body {
+        height: 100svh;
+        /* Use svh for mobile address bars */
+        overflow-y: auto;
+        /* Allow body scroll on mobile for safety */
+        justify-content: flex-start;
+    }
+
+    .container {
+        padding: 15px;
+        height: auto;
+        min-height: 100%;
+        justify-content: flex-start;
+    }
+
+    .profile-card {
+        flex-direction: column;
+        max-height: none;
+        /* Let it grow on mobile */
+        overflow: visible;
+        margin-bottom: 20px;
+    }
+
+    .profile-header {
+        padding: 30px 20px;
+        border-right: none;
+        border-bottom: 1px solid var(--glass-border);
+    }
+
+    .profile-body {
+        padding: 25px 20px;
+        overflow: visible;
+    }
+
+    .profile-img-container {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-name {
+        font-size: 1.6rem;
+    }
+}
