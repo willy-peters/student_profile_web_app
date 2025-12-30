@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charles - Computer Science Student</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        header {
+            text-align: center;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .tagline {
+            font-size: 1.2em;
+            color: #666;
+            font-style: italic;
+        }
+        
+        section {
+            margin: 30px 0;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .skill-category {
+            padding: 15px;
+            background: #f9f9f9;
+            border-left: 3px solid #3498db;
+        }
+        
+        .skill-category h3 {
+            font-size: 1em;
+            color: #3498db;
+            margin-bottom: 8px;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+        }
+        
+        .skill-category li {
+            padding: 3px 0;
+            color: #555;
+        }
+        
+        .project {
+            background: #f9f9f9;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 3px solid #27ae60;
+        }
+        
+        .project h3 {
+            color: #27ae60;
+            margin-bottom: 8px;
+        }
+        
+        .project p {
+            color: #666;
+            margin-bottom: 8px;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .tag {
+            background: #ecf0f1;
+            padding: 4px 10px;
+            border-radius: 3px;
+            font-size: 0.85em;
+            color: #555;
+        }
+        
+        .interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .interest-item {
+            background: #f0f0f0;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Charles</h1>
+            <p class="tagline">Computer Science Student | Problem Solver | Code Enthusiast</p>
+        </header>
+
+        <section>
+            <h2>About Me</h2>
+            <p>I'm a BSc Computer Science student passionate about building efficient and scalable web applications. I enjoy tackling complex problems and turning ideas into functional software. Currently exploring machine learning and cloud technologies while honing my full-stack development skills.</p>
+        </section>
+
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>JavaScript</li>
+                        <li>HTML/CSS</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Frameworks</h3>
+                    <ul>
+                        <li>Django</li>
+                        <li>React</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Others</h3>
+                    <ul>
+                        <li>Git & GitHub</li>
+                        <li>PostgreSQL</li>
+                        <li>REST APIs</li>
+                        <li>Linux</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Projects</h2>
+            
+            <div class="project">
+                <h3>Student Management System</h3>
+                <p>A full-stack web application for managing student records, attendance, and grades. Features user authentication, role-based access control, and real-time data updates.</p>
+                <div class="tech-tags">
+                    <span class="tag">Django</span>
+                    <span class="tag">React</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">REST API</span>
+                </div>
+            </div>
+
+            <div class="project">
+                <h3>Portfolio Website</h3>
+                <p>A responsive personal portfolio showcasing projects and skills. Built with modern web technologies and optimized for performance.</p>
+                <div class="tech-tags">
+                    <span class="tag">React</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">CSS3</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Interests</h2>
+            <div class="interests">
+                <div class="interest-item">🤖 Artificial Intelligence</div>
+                <div class="interest-item">☁️ Cloud Computing</div>
+                <div class="interest-item">🔒 Cybersecurity</div>
+                <div class="interest-item">📱 Mobile Development</div>
+                <div class="interest-item">🎮 Game Development</div>
+                <div class="interest-item">📊 Data Science</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Currently Learning</h2>
+            <p>🔹 Docker and containerization technologies<br>
+               🔹 Algorithm optimization and design patterns</p>
+        </section>
+
+        <footer>
+            <p>© 2025 Charles | BSc Computer Science Student</p>
+            <p>Always learning, always building</p>
+        </footer>
+    </div>
+</body>
+</html>
